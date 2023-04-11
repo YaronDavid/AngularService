@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListadoTareasComponent } from './listado-tareas.component';
+import { SubtituloComponent } from '../subtitulo/subtitulo.component';
+import { TareasService } from '../services/tareas.service';
 
 describe('ListadoTareasComponent', () => {
   let component: ListadoTareasComponent;
@@ -8,7 +10,10 @@ describe('ListadoTareasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListadoTareasComponent ]
+      declarations: [ ListadoTareasComponent, SubtituloComponent ],
+      providers: [
+        TareasService
+      ]
     })
     .compileComponents();
 

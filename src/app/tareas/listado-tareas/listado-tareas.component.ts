@@ -15,4 +15,7 @@ export class ListadoTareasComponent {
   del(nombreTarea: string){
     this.tareasService.deleteTarea(nombreTarea);
   }
+  complete(nombreTarea: string){
+    this.tareasService.completarTarea(nombreTarea);
+  }
 }

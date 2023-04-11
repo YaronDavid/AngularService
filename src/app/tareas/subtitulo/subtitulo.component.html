@@ -1,9 +1,9 @@
 <h2 class="subtitle">Listado de tareas</h2>
 
-<div *ngIf="tareas" class="notification is-primary">
+<div *ngIf="tareas" id="tareas" class="notification is-primary">
     Numero de tareas: {{tareas}}
 </div>
 
-<div *ngIf="!tareas" class="notification is-danger">
+<div id="sinTareas" *ngIf="!tareas" class="notification is-danger">
     NO HAY TAREAS EN LISTA
 </div>

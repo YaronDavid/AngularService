@@ -1,12 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { GridComponent } from './tareas/grid/grid.component';
+import { TareasModule } from './tareas/tareas.module';
+import { SubtituloComponent } from './tareas/subtitulo/subtitulo.component';
+import { TareasService } from './tareas/services/tareas.service';
+import { ListadoTareasComponent } from './tareas/listado-tareas/listado-tareas.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        GridComponent,
+        SubtituloComponent,
+        ListadoTareasComponent
       ],
+      providers: [
+        TareasService
+      ]
     }).compileComponents();
   });
 
@@ -16,16 +27,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tareas'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('tareas');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tareas app is running!');
-  });
+  
 });

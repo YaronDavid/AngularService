@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GridComponent } from './grid.component';
+import { SubtituloComponent } from '../subtitulo/subtitulo.component';
+import { TareasService } from '../services/tareas.service';
+import { ListadoTareasComponent } from '../listado-tareas/listado-tareas.component';
 
 describe('GridComponent', () => {
   let component: GridComponent;
@@ -8,7 +11,10 @@ describe('GridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridComponent ]
+      declarations: [ GridComponent, SubtituloComponent, ListadoTareasComponent ],
+      providers: [
+        TareasService
+      ]
     })
     .compileComponents();
 
